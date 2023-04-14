@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1>AccessRecord insert data form</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" class="box"><br><br>
+            <label for="tn">Topic Name</label>
+            <select name="tn" id="tn">
+                {% for ao in Tdata %}
+                    <option value="{{ao}}">{{ao.topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="pt">Play Type</label>
+            <input type="text" name="pt" id="pt" placeholder="Playing Type" class="box"><br><br>
+            <label for="mail">E mail</label>
+            <input type="email" name="mail" id="mail" placeholder="Enter Email" class="box"><br><br>
+            <input type="submit" value="submit" class="box">
+        </form>
+</body>
+</html>
